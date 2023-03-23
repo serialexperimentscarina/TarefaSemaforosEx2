@@ -16,6 +16,7 @@ public class ThreadAeroporto extends Thread{
 		this.numAviao = numAviao;
 	}
 	
+	// O procedimento de decolagem tem 4 fases (manobra, taxiar, decolagem e afastamento da área).
 	@Override
 	public void run() {
 		try {
@@ -32,6 +33,7 @@ public class ThreadAeroporto extends Thread{
 		}
 	}
 
+	// A fase de manobra pode durar de 3 a 7 segundos.
 	private void manobrar() {
 		int tempoManobra = (int)((Math.random() * 4001) + 3000);
 		try {
@@ -42,6 +44,7 @@ public class ThreadAeroporto extends Thread{
 		System.out.println("O avião #" + numAviao + " terminou de manobrar.");
 	}
 	
+	// A fase de taxiar, de 5 a 10 segundos.
 	private void taxiar() {
 		int tempoTaxiar = (int)((Math.random() * 5001) + 5000);
 		try {
@@ -52,6 +55,7 @@ public class ThreadAeroporto extends Thread{
 		System.out.println("O avião #" + numAviao + " terminou de taxiar.");
 	}
 	
+	// A fase de decolagem, de 1 a 4 segundos.
 	private void decolar() {
 		int tempoDecolagem = (int)((Math.random() * 3001) + 1000);
 		int pista = (int)((Math.random() * 2) + 1);
@@ -79,6 +83,7 @@ public class ThreadAeroporto extends Thread{
 		System.out.println("O avião #" + numAviao + " decolou");
 	}
 	
+	// A fase de afastamento, de 3 a 8 segundos.
 	private void afastar() {
 		int tempoAfastar = (int)((Math.random() * 5001) + 3000);
 		try {
